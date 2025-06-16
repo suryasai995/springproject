@@ -10,4 +10,6 @@ public interface signinservice {
  signindto getUserById(Long id);
 
   signindto createAccount(signindto user);
+  
+  signindto getAccount(signindto user);
 }
