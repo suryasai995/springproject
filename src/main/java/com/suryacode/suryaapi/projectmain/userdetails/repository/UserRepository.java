@@ -8,6 +8,8 @@ import com.suryacode.suryaapi.projectmain.userdetails.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
+    Optional<User> findByUserid(Long userid);
+
 
 }
 

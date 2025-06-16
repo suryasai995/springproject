@@ -4,22 +4,90 @@ public class UserDto {
     private Long id;
     private String name;
     private String email;
+    private Long userid;
+    private String gender;
+    private Long phone;    
+    private String address;   
+    private String lang;
 
-    // Constructors
-    public UserDto() {}
-    public UserDto(Long id, String name, String email) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    // Getters & Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getUserid() {
+        return userid;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public UserDto(Long id, String name, String email, Long userid, String gender, Long phone, String address,
+            String lang) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.userid = userid;
+        this.gender = gender;
+        this.phone = phone;
+        this.address = address;
+        this.lang = lang;
+    }
+
+    // Constructors
+    public UserDto() {}
+   
+
 }

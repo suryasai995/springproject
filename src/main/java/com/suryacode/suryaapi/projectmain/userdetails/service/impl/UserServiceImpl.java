@@ -37,7 +37,7 @@ public List<UserDto> getAllUsers() {
 
 @Override
 public UserDto getUserById(Long id) {
-    User user = userRepository.findById(id)
+    User user = userRepository.findByUserid(id)
             .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
     return userMapper.toDto(user);
