@@ -10,7 +10,28 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "is_email_verified")
+    private boolean isEmailVerified = false;
     
+
+    
+    @Column(unique = true, nullable = false)
+    private String email;
+    
+    private String name;
+    private Long userid;
+    private String gender;
+    private Long phone;    
+    private String address;   
+    private String lang;
+    
+    public boolean isEmailVerified() {
+        return isEmailVerified;
+    }
+
+    public void setEmailVerified(boolean isEmailVerified) {
+        this.isEmailVerified = isEmailVerified;
+    }
     public Long getId() {
         return id;
     }
@@ -19,8 +40,6 @@ public class User {
         this.id = id;
     }
 
-    @Column(unique = true, nullable = false)
-    private String email;
     
     public String getEmail() {
         return email;
@@ -30,12 +49,6 @@ public class User {
         this.email = email;
     }
 
-    private String name;
-    private Long userid;
-    private String gender;
-    private Long phone;    
-    private String address;   
-    private String lang;
 
     public String getName() {
         return name;

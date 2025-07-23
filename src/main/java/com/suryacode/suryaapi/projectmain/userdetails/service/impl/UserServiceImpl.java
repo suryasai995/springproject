@@ -12,7 +12,6 @@ import com.suryacode.suryaapi.projectmain.userdetails.model.User;
 import com.suryacode.suryaapi.projectmain.userdetails.repository.UserRepository;
 import com.suryacode.suryaapi.projectmain.userdetails.service.UserService;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -56,5 +55,15 @@ public UserDto createUser(UserDto userDto) {
     return userMapper.toDto(savedUser);
 }
 
-
+@Override
+public UserDto verifyEmail(String email) {
+    Optional<User> userOpt = userRepository.findByEmail(email);
+    if (userOpt.isPresent()) {
+        User user = userOpt.get();
+        user.setEmailVerified(true);              // ✅ Set to true
+        User savedUser = userRepository.save(user);  // ✅ Save updated user
+        return userMapper.toDto(savedUser);          // ✅ Return updated DTO
+    }
+    throw new UserNotFoundException("User not found with email: " + email);
+}
 }

@@ -5,11 +5,13 @@ import com.suryacode.suryaapi.projectmain.userdetails.dto.UserDto;
 
 public interface UserService {
     // get data
+ 
     List<UserDto> getAllUsers();
     // get by id
     UserDto getUserById(Long id);
     //  add new userdetails 
     UserDto createUser(UserDto userDto);
-
-
+ 
+    UserDto verifyEmail(String email);
+    
 }

@@ -10,7 +10,10 @@ import com.suryacode.suryaapi.projectmain.userdetails.model.User;
 public class UserMapper {
 
     public UserDto toDto(User user) {
-        return new UserDto(user.getId(),user.getEmail(), user.getName(), user.getUserid(), user.getGender(), user.getPhone(), user.getAddress(), user.getLang());
+         UserDto dto = new UserDto(user.getId(),user.getEmail(), user.getName(), user.getUserid(), user.getGender(), user.getPhone(), user.getAddress(), user.getLang());
+         
+        dto.setEmailVerified(user.isEmailVerified());
+        return dto;
     }
 
     public User toEntity(UserDto user) {

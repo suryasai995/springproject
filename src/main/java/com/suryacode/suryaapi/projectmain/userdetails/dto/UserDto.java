@@ -9,6 +9,15 @@ public class UserDto {
     private Long phone;    
     private String address;   
     private String lang;
+    private boolean isEmailVerified = false;
+    public boolean isEmailVerified() {
+        return isEmailVerified;
+    }
+
+    public void setEmailVerified(boolean isEmailVerified) {
+        this.isEmailVerified = isEmailVerified;
+    }
+
 
     public Long getId() {
         return id;
